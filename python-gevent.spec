@@ -1,12 +1,8 @@
-%{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
-
-%global _use_internal_dependency_generator 0
-
 %global upstream_name gevent
 
 Name:		python-%{upstream_name}
 Version:	0.13.6
-Release:	%mkrel 1
+Release:	%mkrel 2
 Summary:	A coroutine-based Python networking library
 
 Group:		Development/Python 
