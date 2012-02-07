@@ -15,7 +15,7 @@ Source0:	http://pypi.python.org/packages/source/g/%{module}/%{module}-%{version}
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 Requires:	python-greenlet
-BuildRequires:	python-devel, python-setuptools, python-sphinx
+BuildRequires:  python-greenlet, python-devel, python-setuptools, python-sphinx
 BuildRequires:	libevent-devel >= 1.4.0
 
 %description
