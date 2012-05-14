@@ -1,7 +1,11 @@
 %define module	gevent
 %define name	python-%{module}
-%define version	0.13.6
-%define release %mkrel 3
+%define version	0.13.7
+%define	rel		1
+%if %mdkversion < 201100
+%define release %mkrel %rel
+%else
+%define release	%rel
 
 Name:		%{name}
 Version:	%{version}
