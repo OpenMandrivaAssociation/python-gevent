@@ -6,6 +6,7 @@
 %define release %mkrel %rel
 %else
 %define release	%rel
+%endif
 
 Name:		%{name}
 Version:	%{version}
