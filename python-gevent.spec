@@ -68,3 +68,26 @@ popd
 %doc AUTHORS changelog.rst LICENSE* README* TODO examples/ doc/_build/html/
 %{python_sitearch}/%{module}
 %{python_sitearch}/%{module}-%{version}-*.egg-info
+
+
+%changelog
+* Thu Sep 06 2012 Lev Givon <lev@mandriva.org> 0.13.8-1
++ Revision: 816426
+- Update to 0.13.8.
+
+* Mon May 14 2012 Lev Givon <lev@mandriva.org> 0.13.7-1
++ Revision: 798860
+- Update to 0.13.7.
+
+* Tue Feb 07 2012 Lev Givon <lev@mandriva.org> 0.13.6-3
++ Revision: 771464
+- Build documentation.
+
+* Mon Oct 31 2011 Alexander Khrukin <akhrukin@mandriva.org> 0.13.6-2
++ Revision: 708087
+- removed unneeded lines from spec
+
+* Mon Oct 31 2011 Alexander Khrukin <akhrukin@mandriva.org> 0.13.6-1
++ Revision: 708044
+- imported package python-gevent
+
