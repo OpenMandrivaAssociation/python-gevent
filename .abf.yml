@@ -1,2 +1,4 @@
+removed_sources:
+  gevent-0.13.8.tar.gz: 70f87c67496362a0d57be39e3acda6808a269842
 sources:
-  "gevent-0.13.8.tar.gz": 70f87c67496362a0d57be39e3acda6808a269842
+  gevent-1.0.tar.gz: 6ec781c79cfc48a66cfb3d2910fb7ef0b163bc33

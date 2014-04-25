@@ -1,13 +1,14 @@
 %define module	gevent
 
 Summary:	A coroutine-based Python networking library
+
 Name:		python-%{module}
-Version:	0.13.8
-Release:	2
+Version:	1.0
+Release:	1
 Group:		Development/Python 
 License:	MIT
 Url:		http://www.gevent.org/
-Source0:	http://pypi.python.org/packages/source/g/%{module}/%{module}-%{version}.tar.gz
+Source0:	http://pypi.python.org/packages/source/g/gevent/gevent-%{version}.tar.gz
 
 BuildRequires:  python-greenlet
 BuildRequires:	python-setuptools
@@ -38,7 +39,7 @@ implementation, and better performance.
 %setup -qn %{module}-%{version}
 
 %build
-PYTHONDONTWRITEBYTECODE= CFLAGS="%{optflags}" %{__python} setup.py build
+PYTHONDONTWRITEBYTECODE= CFLAGS="%{optflags}" python setup.py build
 
 pushd doc
 export PYTHONPATH=`dir -1d ../build/lib.linux*`
@@ -50,10 +51,11 @@ popd
 python setup.py install -O1 --skip-build --root %{buildroot}
 
 # Fix non-standard-executable-perm error
-chmod 0755 %{buildroot}%{python_sitearch}/%{module}/core.so
+chmod 0755 %{buildroot}%{py_platsitedir}/%{module}/core.so
 
 %files
 %doc AUTHORS changelog.rst LICENSE* README* TODO examples/ doc/_build/html/
-%{python_sitearch}/%{module}
-%{python_sitearch}/%{module}-%{version}-*.egg-info
+%{py_platsitedir}/%{module}
+%{py_platsitedir}/%{module}-%{version}-*.egg-info
+
 
