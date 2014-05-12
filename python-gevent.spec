@@ -2,8 +2,9 @@
 
 Summary:	A coroutine-based Python networking library
 
+
 Name:		python-%{module}
-Version:	1.0
+Version:	1.0.1
 Release:	1
 Group:		Development/Python 
 License:	MIT
@@ -57,5 +58,6 @@ chmod 0755 %{buildroot}%{py_platsitedir}/%{module}/core.so
 %doc AUTHORS changelog.rst LICENSE* README* TODO examples/ doc/_build/html/
 %{py_platsitedir}/%{module}
 %{py_platsitedir}/%{module}-%{version}-*.egg-info
+
 
 
