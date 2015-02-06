@@ -5,7 +5,7 @@ Summary:	A coroutine-based Python networking library
 
 Name:		python-%{module}
 Version:	1.0.1
-Release:	1
+Release:	2
 Group:		Development/Python 
 License:	MIT
 Url:		http://www.gevent.org/
