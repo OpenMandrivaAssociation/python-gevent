@@ -8,7 +8,7 @@ Version:	1.0.1
 Release:	2
 Group:		Development/Python 
 License:	MIT
-Url:		http://www.gevent.org/
+Url:		https://www.gevent.org/
 Source0:	http://pypi.python.org/packages/source/g/gevent/gevent-%{version}.tar.gz
 
 BuildRequires:  python-greenlet
