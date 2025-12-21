@@ -11,6 +11,7 @@ License:	MIT
 Url:		https://www.gevent.org/
 Source0:	http://pypi.python.org/packages/source/g/gevent/gevent-%{version}.tar.gz
 
+BuildRequires:	make
 BuildRequires:  python-greenlet
 BuildRequires:	python-setuptools
 BuildRequires:	python-sphinx
