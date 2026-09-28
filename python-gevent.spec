@@ -12,12 +12,6 @@ BuildRequires:	python%{pyver}dist(wheel)
 BuildRequires:	python%{pyver}dist(setuptools)
 BuildRequires:	python%{pyver}dist(cython)
 BuildRequires:	python%{pyver}dist(cffi)
-BuildRequires:	python%{pyver}dist(,
-     # python 3.7 requires at least 0.4.14, which is abi incompatible with earlier
-     # releases. python 3.9 and 3.10 require 0.4.16;
-     # 0.4.17 is abi incompatible with earlier releases, but compatible with 1.0
-     # 1.1.3 is needed for cpython 3.11.
-     # 2.0 is not abi compatible with earlier releases, but with luck it won)
 BuildRequires:	python%{pyver}dist(greenlet)
 BuildRequires:	gcc
 BuildRequires:	lib64python-devel
