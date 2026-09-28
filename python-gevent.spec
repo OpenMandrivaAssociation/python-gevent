@@ -1,64 +1,30 @@
-%define module	gevent
-
-Summary:	A coroutine-based Python networking library
-
-
-Name:		python-%{module}
-Version:	1.0.1
-Release:	2
-Group:		Development/Python 
+Name:		python-gevent
+Version:	24.11.1
+Release:	1
+Summary:	Coroutine-based network library
 License:	MIT
-Url:		https://www.gevent.org/
-Source0:	http://pypi.python.org/packages/source/g/gevent/gevent-%{version}.tar.gz
-
-BuildRequires:	make
-BuildRequires:  python-greenlet
-BuildRequires:	python-setuptools
-BuildRequires:	python-sphinx
-BuildRequires:	pkgconfig(libevent)
-BuildRequires:	pkgconfig(python)
-Requires:	python-greenlet
-
+Group:		Development/Python
+URL:		https://pypi.org/project/gevent/
+Source0:	gevent-24.11.1.tar.gz
+BuildSystem:	python
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(wheel)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(cython)
+BuildRequires:	python%{pyver}dist(cffi)
+BuildRequires:	python%{pyver}dist(,
+     # python 3.7 requires at least 0.4.14, which is abi incompatible with earlier
+     # releases. python 3.9 and 3.10 require 0.4.16;
+     # 0.4.17 is abi incompatible with earlier releases, but compatible with 1.0
+     # 1.1.3 is needed for cpython 3.11.
+     # 2.0 is not abi compatible with earlier releases, but with luck it won)
+BuildRequires:	python%{pyver}dist(greenlet)
+BuildRequires:	gcc
+BuildRequires:	lib64python-devel
+BuildRequires:	python%{pyver}dist(zope.event)
+BuildRequires:	python%{pyver}dist(zope.interface)
 %description
-gevent is a coroutine-based Python networking library that uses greenlet to
-provide a high-level synchronous API on top of libevent event loop.
-
-Features include:
-
-* Fast event loop based on libevent.
-* Lightweight execution units based on greenlet.
-* Familiar API that re-uses concepts from the Python standard library.
-* Cooperative sockets with ssl support.
-* DNS queries performed through libevent-dns.
-* Ability to use standard library and 3rd party modules written for
-  standard blocking sockets
-* Fast WSGI server based on libevent-http.
-
-gevent is inspired by eventlet but features a more consistent API, a simpler 
-implementation, and better performance. 
-
-%prep
-%setup -qn %{module}-%{version}
-
-%build
-PYTHONDONTWRITEBYTECODE= CFLAGS="%{optflags}" python setup.py build
-
-pushd doc
-export PYTHONPATH=`dir -1d ../build/lib.linux*`
-make html
-rm -rf _build/html/.buildinfo 
-popd
-
-%install
-python setup.py install -O1 --skip-build --root %{buildroot}
-
-# Fix non-standard-executable-perm error
-chmod 0755 %{buildroot}%{py_platsitedir}/%{module}/core.so
+Coroutine-based network library.
 
 %files
-%doc AUTHORS changelog.rst LICENSE* README* TODO examples/ doc/_build/html/
-%{py_platsitedir}/%{module}
-%{py_platsitedir}/%{module}-%{version}-*.egg-info
-
-
-
+%{python_sitearch}/*
