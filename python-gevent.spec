@@ -17,6 +17,11 @@ BuildRequires:	gcc
 BuildRequires:	lib64python-devel
 BuildRequires:	python%{pyver}dist(zope.event)
 BuildRequires:	python%{pyver}dist(zope.interface)
+
+%prep -a
+# Bundled libev's configure fails dependency tracking under clang.
+sed -i 's|sh ./configure -C|sh ./configure -C --disable-dependency-tracking|' _setuplibev.py
+
 %description
 Coroutine-based network library.
 
