@@ -1,11 +1,11 @@
 Name:		python-gevent
-Version:	24.11.1
+Version:	26.9.0
 Release:	1
 Summary:	Coroutine-based network library
 License:	MIT
 Group:		Development/Python
 URL:		https://pypi.org/project/gevent/
-Source0:	gevent-24.11.1.tar.gz
+Source0:	https://files.pythonhosted.org/packages/source/g/gevent/gevent-%{version}.tar.gz
 BuildSystem:	python
 BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(wheel)
